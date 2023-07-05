@@ -5,7 +5,8 @@ end
 
 -- Setup Workspace
 local home = os.getenv "HOME"
-local workspace_path = home .. "/.local/share/lunarvim/jdtls-workspace/"
+-- local workspace_path = home .. "/.local/share/lunarvim/jdtls-workspace/"
+local workspace_path = home .. "/workspace/"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = workspace_path .. project_name
 
@@ -47,11 +48,11 @@ local config = {
     "java.base/java.util=ALL-UNNAMED",
     "--add-opens",
     "java.base/java.lang=ALL-UNNAMED",
-    "-javaagent:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
+    "-javaagent:" .. home .. "/.local/share/nvim-LunarIde/mason/packages/jdtls/lombok.jar",
     "-jar",
-    vim.fn.glob(home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
+    vim.fn.glob(home .. "/.local/share/nvim-LunarIde/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
     "-configuration",
-    home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. os_config,
+    home .. "/.local/share/nvim-LunarIde/mason/packages/jdtls/config_" .. os_config,
     "-data",
     workspace_dir,
   },

@@ -2,7 +2,8 @@ local M = {}
 
 local sqlite = require "sqlite"
 local tbl = require "sqlite.tbl" --- for constructing sql tables
-local uri = os.getenv "HOME" .. "/test_db"
+local home = os.getenv "HOME"
+local uri = home .. "/test_db"
 
 local projects = tbl("projects", {
   id = true,
@@ -49,7 +50,7 @@ M.get_bookmarks = function()
 end
 
 lvim.builtin.which_key.mappings["."] = {
-  '<cmd>lua require("user.sqtest2").add_bookmark("/Users/chris/.config/lvim/config.lua", "3,4")<CR>',
+  '<cmd>lua require("user.sqtest2").add_bookmark(os.getenv "HOME" .. "/.config/nvim-LunarIde/config.lua", "3,4")<CR>',
   "Comment",
 }
 

@@ -2,7 +2,8 @@ M = {}
 
 local db = require "sqlite.db" --- for constructing sql databases
 local tbl = require "sqlite.tbl" --- for constructing sql tables
-local uri = "/home/chris/.config/lvim/test_db" -- defined here to be deleted later
+local home = os.getenv "HOME"
+local uri = home .. "/.config/nvim-LunarIde/test_db" -- defined here to be deleted later
 
 local julianday = db.lib.julianday
 local strftime = db.lib.strftime
@@ -48,10 +49,10 @@ function entries:get()
 end
 
 local test = {
-  { filepath = "/home/chris/.config/lvim/config.lua", linenumbers = "3,7" },
-  { filepath = "/home/chris/.config/lvim/lua/user/bqf.lua.lua", linenumbers = "1,4" },
-  { filepath = "/home/chris/.config/lvim/lua/user/git.lua", linenumbers = "2,5" },
-  { filepath = "/home/chris/.config/lvim/lua/user/dial.lua", linenumbers = "6,9" },
+  { filepath = home .. "/.config/nvim-LunarIde/config.lua", linenumbers = "3,7" },
+  { filepath = home .. "/.config/nvim-LunarIde/lua/user/bqf.lua.lua", linenumbers = "1,4" },
+  { filepath = home .. "/.config/nvim-LunarIde/lua/user/git.lua", linenumbers = "2,5" },
+  { filepath = home .. "/.config/nvim-LunarIde/lua/user/dial.lua", linenumbers = "6,9" },
 }
 
 function entries:seed()
