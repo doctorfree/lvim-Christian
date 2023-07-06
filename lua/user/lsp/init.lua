@@ -4,6 +4,14 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls" })
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tsserver" })
 
+lvim.lsp.installer.setup.automatic_installation = true
+lvim.lsp.installer.setup.ensure_installed = {
+  "jdtls",
+  "google-java-format",
+  "java-debug-adapter",
+  "java-test",
+}
+
 local capabilities = require("lvim.lsp").common_capabilities()
 
 require("typescript").setup {

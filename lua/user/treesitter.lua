@@ -12,9 +12,23 @@
 -- end
 
 lvim.builtin.treesitter.ensure_installed = {
+  "bash",
+  "go",
+  "html",
   "java",
-  "python",
   "javascript",
+  "json",
+  "lua",
+  "markdown",
+  "markdown_inline",
+  "query",
+  "python",
+  "regex",
+  "rust",
+  "toml",
+  "vim",
+  "vimdoc",
+  "yaml",
 }
 
 lvim.builtin.treesitter.rainbow = {
