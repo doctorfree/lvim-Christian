@@ -1,14 +1,19 @@
-require("modicator").setup {
-  -- Show warning if any required option is missing
-  show_warnings = true,
+require('modicator').setup({
+  show_warnings = false,
   highlights = {
-    -- Default options for bold/italic
     defaults = {
       bold = true,
       italic = false,
     },
   },
-}
+  integration = {
+    lualine = {
+      enabled = true,
+      mode_section = nil,
+      highlight = 'bg',
+    },
+  },
+})
 
 vim.api.nvim_create_autocmd({ "Colorscheme" }, {
   callback = function()
